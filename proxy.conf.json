@@ -1,6 +1,6 @@
 {
   "/api": {
-    "target": "https://mcag-cms.herokuapp.com/api/auth",
+    "target": "https://mcag-cms.herokuapp.com",
     "secure": false,
     "changeOrigin": true
   }

@@ -15,7 +15,7 @@ export class LoginService {
 
 
   login(username: string, password: string) {
-    return this.http.post(API_URL + `/login`, {username,password});
+    return this.http.post(API_URL + `/auth/login`, {username,password});
   }
 
 
