@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiUrl: 'https://ancient-caverns-45172.herokuapp.com',
+  apiUrl: 'https://mcag-cms.herokuapp.com/api/auth',
 };

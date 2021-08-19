@@ -60,9 +60,6 @@ export class AppInterceptor implements HttpInterceptor {
 
     if (token) {
        headers = headers.set('Authorization', `Bearer ${token}`);
-      // if (request.url.includes('/attachments/multipart/one')) {
-      //   headers = headers.delete('Content-Type', 'application/json');
-      // }
     }
 
     return headers;

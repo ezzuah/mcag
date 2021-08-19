@@ -10,13 +10,12 @@ const API_URL = environment.apiUrl;
 
 export class LoginService {
 
-  private isLoggedIn = false;
 
   constructor(public http: HttpClient) {}
 
 
   login(username: string, password: string) {
-    return this.http.post(API_URL + `/validate`, {username,password});
+    return this.http.post(API_URL + `/login`, {username,password});
   }
 
 
