@@ -1,0 +1,37 @@
+.first-half {
+  height: 100vh;
+  background-color: #011061;
+  color: white
+}
+
+.logo-position {
+  width: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  align-items: center;
+  color: white;
+}
+
+.card {
+
+width: 506px;
+height: 663px;
+background: #FFFFFF 0% 0% no-repeat padding-box;
+box-shadow: 0px 20px 60px #00000029;
+border-radius: 50px;
+opacity: 1;
+}
+
+.submit-button  {
+width: 358px;
+height: 49px;
+background: #011061 0% 0% no-repeat padding-box;
+border-radius: 25px;
+opacity: 1;
+color:white
+}
+
+
+
