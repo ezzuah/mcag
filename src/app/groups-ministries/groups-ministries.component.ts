@@ -15,6 +15,8 @@ export class GroupsMinistriesComponent implements OnInit {
 
   newForm: FormGroup;
 
+  data: any = [];
+
   constructor(private groupsMinistriesService: GroupMinistriesService,
               private fb: FormBuilder,
               private global: GlobalService,
@@ -36,7 +38,7 @@ export class GroupsMinistriesComponent implements OnInit {
   loadMinistries() {
     this.groupsMinistriesService.getMinistries().subscribe((response) => {
       if (response) {
-
+        this.data = response;
       }
     })
   }

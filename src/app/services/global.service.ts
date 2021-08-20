@@ -14,6 +14,10 @@ export class GlobalService {
 
 
   getLogInStatus() {
-    return (localStorage.getItem('mcagToken'))
+    if (localStorage.getItem('mcagToken') === null) {
+      return false
+    } else {
+      return true
+    }
   }
 }
