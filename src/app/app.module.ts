@@ -15,6 +15,9 @@ import { LoadingBarModule } from '@ngx-loading-bar/core';
 import { LoadingBarHttpClientModule } from "@ngx-loading-bar/http-client";
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { GroupsMinistriesComponent } from './groups-ministries/groups-ministries.component';
+import { AddNewGroupMinistryComponent } from './groups-ministries/add-new-group-ministry/add-new-group-ministry.component';
+import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
@@ -24,7 +27,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     DashboardComponent,
     MembersComponent,
     AddMemberComponent,
-    SideNavComponent
+    SideNavComponent,
+    GroupsMinistriesComponent,
+    AddNewGroupMinistryComponent
   ],
   imports: [
     BrowserModule,
@@ -36,6 +41,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     LoadingBarHttpClientModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
+    NgbModalModule
   ],
   providers: [
     // { provide: HTTP_INTERCEPTORS, useClass: AppInterceptor, multi: true }

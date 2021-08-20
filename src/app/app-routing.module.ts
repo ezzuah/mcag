@@ -1,3 +1,5 @@
+import { AddNewGroupMinistryComponent } from './groups-ministries/add-new-group-ministry/add-new-group-ministry.component';
+import { GroupsMinistriesComponent } from './groups-ministries/groups-ministries.component';
 import { AddMemberComponent } from './members/add-member/add-member.component';
 import { MembersComponent } from './members/members.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
@@ -11,6 +13,8 @@ const routes: Routes = [
   {path: 'dashboard', component: DashboardComponent},
   {path: 'members', component: MembersComponent},
   {path: 'members/add-member', component: AddMemberComponent},
+  {path: 'groups-ministries', component: GroupsMinistriesComponent},
+  {path: 'groups-ministries-add', component: AddNewGroupMinistryComponent},
   { path: '**', redirectTo: '/login', pathMatch: 'full' },
 ];
 

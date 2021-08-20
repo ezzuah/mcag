@@ -5,11 +5,15 @@ import { Injectable } from '@angular/core';
 })
 export class GlobalService {
 
+  adminData: any;
 
-  constructor() { }
+
+  constructor() {
+    this.adminData = JSON.parse(localStorage.getItem('mcagAdmin'));
+  }
 
 
   getLogInStatus() {
-    return JSON.parse(localStorage.getItem('mcagToken'))
+    return (localStorage.getItem('mcagToken'))
   }
 }
