@@ -1,3 +1,4 @@
+import { SundaySchoolComponent } from './sunday-school/sunday-school.component';
 import { AddNewGroupMinistryComponent } from './groups-ministries/add-new-group-ministry/add-new-group-ministry.component';
 import { GroupsMinistriesComponent } from './groups-ministries/groups-ministries.component';
 import { AddMemberComponent } from './members/add-member/add-member.component';
@@ -15,6 +16,7 @@ const routes: Routes = [
   {path: 'members/add-member', component: AddMemberComponent},
   {path: 'groups-ministries', component: GroupsMinistriesComponent},
   {path: 'groups-ministries-add', component: AddNewGroupMinistryComponent},
+  {path: 'sunday-school', component: SundaySchoolComponent},
   { path: '**', redirectTo: '/login', pathMatch: 'full' },
 ];
 

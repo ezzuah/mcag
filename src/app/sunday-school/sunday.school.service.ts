@@ -8,34 +8,21 @@ const API_URL = environment.apiUrl;
   providedIn: 'root',
 })
 
-export class GroupMinistriesService {
+export class SundaySchoolService {
 
 
   constructor(public http: HttpClient) {}
 
 
-  getMinistries() {
+  getClasses() {
     const headers = this.getHeaders();
-    return this.http.get(API_URL + `/ministries`, {headers});
+    return this.http.get(API_URL + `/sunday-school-classes`, {headers});
   }
 
 
   addNew(payload: any) {
     const headers = this.getHeaders();
-    if (payload.type === 'ministries') {
-      delete payload.type
-    return this.http.post(API_URL + `/ministries`, payload, {headers})
-    }
-
-    if (payload.type === 'groups') {
-      delete payload.type
-      return this.http.post(API_URL + `/groups`, payload, {headers})
-    }
-
-    if (payload.type === 'education') {
-      delete payload.type
-      return this.http.post(API_URL + `/educational-levels`, payload, {headers})
-      }
+    return this.http.post(API_URL + `/sunday-school-classes`, payload, {headers})
   }
 
 

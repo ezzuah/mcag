@@ -18,6 +18,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { GroupsMinistriesComponent } from './groups-ministries/groups-ministries.component';
 import { AddNewGroupMinistryComponent } from './groups-ministries/add-new-group-ministry/add-new-group-ministry.component';
 import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
+import { SundaySchoolComponent } from './sunday-school/sunday-school.component';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
     AddMemberComponent,
     SideNavComponent,
     GroupsMinistriesComponent,
-    AddNewGroupMinistryComponent
+    AddNewGroupMinistryComponent,
+    SundaySchoolComponent
   ],
   imports: [
     BrowserModule,

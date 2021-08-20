@@ -1,7 +1,7 @@
 import { GlobalService } from './../services/global.service';
 import { GroupMinistriesService } from './groups.ministries.service';
 import { Component, OnInit } from '@angular/core';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModal, NgbModalConfig, NgbModalOptions } from '@ng-bootstrap/ng-bootstrap';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 
@@ -17,6 +17,8 @@ export class GroupsMinistriesComponent implements OnInit {
 
   data: any = [];
 
+  modalOption:  NgbModalOptions = {};
+
   constructor(private groupsMinistriesService: GroupMinistriesService,
               private fb: FormBuilder,
               private global: GlobalService,
@@ -26,7 +28,7 @@ export class GroupsMinistriesComponent implements OnInit {
                 this.newForm = this.fb.group({
                   name: ['', Validators.required],
                   description: ['', Validators.required],
-                  type: [''],
+                  type: ['', Validators.required],
                   createdBy: [this.global.adminData.name]
                 });
               }
@@ -48,7 +50,9 @@ export class GroupsMinistriesComponent implements OnInit {
   }
 
   addNew(content) {
-    this.modalService.open(content);
+    this.modalOption.backdrop = 'static';
+    this.modalOption.keyboard = false;
+    this.modalService.open(content, this.modalOption);
   }
 
   saveEntry() {
@@ -57,6 +61,7 @@ export class GroupsMinistriesComponent implements OnInit {
     this.groupsMinistriesService.addNew(payload).subscribe((response) => {
       if (response) {
         this.toast.success('Saved Successfully');
+        this.newForm.reset();
         this.loadMinistries();
       }
     }, err => {
