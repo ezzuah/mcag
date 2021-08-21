@@ -1,3 +1,4 @@
+import { MembersService } from './../members/members.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import * as $ from 'jquery';
@@ -9,10 +10,23 @@ import * as $ from 'jquery';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  members: any = [];
+
+  constructor(private router: Router,
+              private membersService: MembersService) { }
 
   ngOnInit() {
+    this.loadMembers()
+}
 
+loadMembers() {
+  this.membersService.getMembers().subscribe((response) => {
+    if (response) {
+      this.members = response;
+    }
+  }, err => {
+    console.log(err)
+  })
 }
 
 addMember() {

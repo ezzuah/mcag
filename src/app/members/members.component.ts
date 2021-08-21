@@ -1,4 +1,7 @@
+import { MembersService } from './members.service';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-members',
@@ -7,9 +10,29 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MembersComponent implements OnInit {
 
-  constructor() { }
+  members: any = [];
+
+  constructor(private membersService: MembersService,
+              private toast: ToastrService,
+              private router: Router) { }
 
   ngOnInit() {
+    this.loadMembers();
+  }
+
+  loadMembers() {
+    this.membersService.getMembers().subscribe((response: any) => {
+      if (response) {
+        this.members = response;
+        this.toast.success(response.message)
+      }
+    }, err => {
+      console.log(err)
+    })
+  }
+
+  addMember() {
+    this.router.navigate(['/members/add-member'])
   }
 
 }

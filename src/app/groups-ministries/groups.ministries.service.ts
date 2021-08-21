@@ -19,6 +19,16 @@ export class GroupMinistriesService {
     return this.http.get(API_URL + `/ministries`, {headers});
   }
 
+  getGroups() {
+    const headers = this.getHeaders();
+    return this.http.get(API_URL + `/groups`, {headers});
+  }
+
+  getEducationalLevels() {
+    const headers = this.getHeaders();
+    return this.http.get(API_URL + `/educational-levels`, {headers});
+  }
+
 
   addNew(payload: any) {
     const headers = this.getHeaders();

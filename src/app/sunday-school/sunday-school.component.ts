@@ -60,9 +60,9 @@ export class SundaySchoolComponent implements OnInit {
   saveEntry() {
     const payload = this.newForm.value;
     console.log(payload)
-    this.sundaySchoolService.addNew(payload).subscribe((response) => {
+    this.sundaySchoolService.addNew(payload).subscribe((response: any) => {
       if (response) {
-        this.toast.success('Saved Successfully');
+        this.toast.success(response.message);
         this.newForm.reset();
         this.loadClasses();
       }

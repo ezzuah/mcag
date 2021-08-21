@@ -1,1 +1,77 @@
-<p>members works!</p>
+<div class="row">
+  <div class="col-lg- d-flex flex-column">
+    <div class="row flex-grow">
+      <div class="col-12 grid-margin stretch-card">
+        <div class="card card-rounded">
+          <div class="card-body">
+            <div class="d-sm-flex justify-content-between align-items-start">
+              <div>
+                <h4 class="card-title card-title-dash">Church Members</h4>
+               <p class="card-subtitle card-subtitle-dash">Recently Added {{members?.length}} Member(s)</p>
+              </div>
+              <div>
+                <button
+                (click)="addMember()"
+                class="btn btn-primary btn-lg text-white mb-0 me-0" type="button"><i class="mdi mdi-account-plus"></i>Add new member</button>
+              </div>
+            </div>
+            <div class="table-responsive  mt-1">
+              <table class="table select-table">
+                <thead>
+                  <tr>
+                    <th>
+                      <div class="form-check form-check-flat mt-0">
+                        <label class="form-check-label">
+                          <input type="checkbox" class="form-check-input" aria-checked="false"><i class="input-helper"></i></label>
+                      </div>
+                    </th>
+                    <th>Full Name</th>
+                    <th>Gender</th>
+                    <th>Ministry</th>
+                    <th>Phone Number</th>
+                    <th>Options</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let item of members">
+                    <td>
+                      <div class="form-check form-check-flat mt-0">
+                        <label class="form-check-label">
+                        <input type="checkbox" class="form-check-input" aria-checked="false"><i class="input-helper"></i></label>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="d-flex ">
+                        <img src="assets/imgs/avatar.svg" alt="">
+                        <div>
+                          <h6>{{item.otherNames}} {{item.surName}}</h6>
+                          <p>{{item.nationality}}</p>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <h6>{{item.gender}}</h6>
+                      <p>company type</p>
+                    </td>
+                    <td>
+                      <h6>{{item.ministry?.name}}</h6>
+                      <p>{{item.sundaySchoolClass}}</p>
+                    </td>
+                    <td>
+                      <h6>{{item.phoneNumber}}</h6>
+                    </td>
+                    <td>
+                      Edit
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>

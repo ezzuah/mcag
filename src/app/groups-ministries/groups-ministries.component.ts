@@ -45,7 +45,8 @@ export class GroupsMinistriesComponent implements OnInit {
     })
   }
 
-  getGroups() {
+
+  loadGroups() {
 
   }
 
