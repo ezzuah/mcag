@@ -89,7 +89,8 @@
     "typeahead.js": "^0.11.1",
     "typicons.font": "^2.0.9",
     "x-editable": "^1.5.1",
-    "zone.js": "~0.9.1"
+    "zone.js": "~0.9.1",
+    "express":"*"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.802.0",
