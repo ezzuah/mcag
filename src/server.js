@@ -8,9 +8,11 @@ const app = express();
 // Replace the '/dist/<to_your_project_name>'
 app.use(express.static(__dirname + '/dist/mcag'));
 
-
-app.get('*', (req, res) => {
-  res.sendFile(`./mcag/dist/index.html`); // load the single view file (angular will handle the page changes on the front-end)
+app.get('*', function(req,res) {
+  // Replace the '/dist/<to_your_project_name>/index.html'
+  res.sendFile('index.html', { root: __dirname });
 });
+
+
 // Start the app by listening on the default Heroku port
 app.listen(process.env.PORT || 8080);
