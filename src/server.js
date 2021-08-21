@@ -10,7 +10,7 @@ app.use(express.static(__dirname + '/dist/mcag'));
 
 app.get('*', function(req,res) {
   // Replace the '/dist/<to_your_project_name>/index.html'
-  res.sendFile('index.html', { root: __dirname });
+  res.sendFile(path.join(__dirname + '/dist/index.html'));
 });
 
 
