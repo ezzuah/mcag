@@ -24,7 +24,6 @@ export class MembersComponent implements OnInit {
     this.membersService.getMembers().subscribe((response: any) => {
       if (response) {
         this.members = response;
-        this.toast.success(response.message)
       }
     }, err => {
       console.log(err)
