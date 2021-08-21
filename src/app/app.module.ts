@@ -1,3 +1,4 @@
+import { AuthGuard } from './auth-guard/auth.guard';
 import { AppInterceptor } from './interceptor/app.interceptor';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -46,6 +47,7 @@ import { SundaySchoolComponent } from './sunday-school/sunday-school.component';
     NgbModalModule
   ],
   providers: [
+    AuthGuard
     // { provide: HTTP_INTERCEPTORS, useClass: AppInterceptor, multi: true }
   ],
   bootstrap: [AppComponent]

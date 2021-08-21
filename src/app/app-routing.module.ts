@@ -1,3 +1,4 @@
+import { AuthGuard } from './auth-guard/auth.guard';
 import { SundaySchoolComponent } from './sunday-school/sunday-school.component';
 import { AddNewGroupMinistryComponent } from './groups-ministries/add-new-group-ministry/add-new-group-ministry.component';
 import { GroupsMinistriesComponent } from './groups-ministries/groups-ministries.component';
@@ -11,7 +12,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
   {path: 'login', component: LoginComponent},
-  {path: 'dashboard', component: DashboardComponent},
+  {path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard]},
   {path: 'members', component: MembersComponent},
   {path: 'members/add-member', component: AddMemberComponent},
   {path: 'groups-ministries', component: GroupsMinistriesComponent},
