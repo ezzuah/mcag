@@ -90,7 +90,7 @@
     "typicons.font": "^2.0.9",
     "x-editable": "^1.5.1",
     "zone.js": "~0.9.1",
-    "express":"*"
+    "express":"^4.17.1"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.802.0",
