@@ -15,7 +15,6 @@ export class AuthGuard implements CanActivate {
     canActivate(
         route: ActivatedRouteSnapshot,
         state: RouterStateSnapshot): boolean | Promise<boolean> {
-        const isAuthenticated = JSON.parse(localStorage.getItem('mcagToken'))
 
         if (!this.global.getLogInStatus()) {
             this.router.navigate(['/login']);
